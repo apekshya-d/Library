@@ -1,0 +1,25 @@
+{
+  "name": "library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .; prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apekshya-d/Library.git"
+  },
+  "author": "apekshya.d@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apekshya-d/Library/issues"
+  },
+  "homepage": "https://github.com/apekshya-d/Library#readme",
+  "devDependencies": {
+    "eslint": "^8.35.0",
+    "eslint-config-prettier": "^8.6.0",
+    "prettier": "2.8.4"
+  }
+}
