@@ -1,3 +1,7 @@
+:root {
+    --primary-color: rgb(107, 151, 167);
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -9,12 +13,16 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 10px 40px;
-    background-color: rgb(107, 151, 167);
+    background-color: var(--primary-color);
 }
 
 h1{
     font-size: 3em;
     font-weight: 500;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 #mainButton {
@@ -24,6 +32,26 @@ h1{
     height: 70px;
     border-radius: 50%;
     margin-top: 25px;
+    font-size: 3.2em;
+    color: var(--primary-color);
+}
+
+.quote {
+    margin-top: 12%;
+    color: rgb(32, 106, 133);
+    top: 300px;
+    width: 100%;
+    text-align: center;
+}
+
+.quote p {
+    font-size: 2.2em;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.hide {
+    display: none;
 }
 
 #container {
@@ -36,7 +64,7 @@ h1{
 
 
 .card {
-    background-color:  rgb(107, 151, 167);
+    background-color: var(--primary-color);
     border-radius: 25px;
     padding: 20px;
     display: flex;
@@ -53,11 +81,93 @@ h1{
 }
 
 .card button {
-    background-color: white;
     border: none;
     width: 100%;
     border-radius: 10px;
     font-size: 0.8em;
     text-align: center;
     padding: 5px;
+    color: rgb(32, 106, 133);
 }
+
+.greenButton {
+    background-color: rgb(105, 241, 184);
+}
+
+.redButton {
+    background-color: rgb(246 166 160);
+}
+
+dialog {
+    overflow: unset;
+    border-radius: 15px;
+    background-color:  var(--primary-color);
+    border: none;
+}
+
+dialog div {
+    width: 300px;
+    height: 350px;
+    position: relative;
+    padding: 15px 5px;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    height: 100%;
+}
+
+#formClose {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    right: -29px;
+    top: -33px;
+    background-color: rgb(220, 147, 147);
+    border: none;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+#title, #author, #pages {
+    height: 50px;
+    overflow: hidden;
+    border-radius: 8px;
+    font-size: 1.2em;
+    text-align: center;
+    border: none;
+}
+
+#ifRead {
+    width: 20px;
+    height: 20px;
+    border: none;
+    margin-top: 0;
+}
+
+form div {
+    display: flex;
+    height: 30px;
+    gap: 15px;
+    padding: 0 20px;
+    font-size: 1.1em;
+    color: white;
+}
+
+form button {
+    height: 40px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 1.3em;
+    border: none;
+    color: rgb(32, 106, 133);
+    text-align: center;
+    padding: 5px;
+    font-weight: 500;
+}
+

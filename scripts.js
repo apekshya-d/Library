@@ -3,26 +3,13 @@ const mainButton = document.querySelector("#mainButton");
 const dialog = document.querySelector("dialog");
 const form = document.querySelector("form");
 const formClose = document.querySelector("#formClose");
+const quote = document.querySelector(".quote");
 
 if (window.history.replaceState) {
   window.history.replaceState(null, null, window.location.href);
 }
 
-const myLibrary = [
-  {
-    title: "example1",
-    author: "example1",
-    pages: "example1",
-    ifRead: "example1",
-  },
-
-  {
-    title: "example2",
-    author: "example2",
-    pages: "example2",
-    ifRead: "example2",
-  },
-];
+const myLibrary = [];
 
 function Book(title, author, pages, ifRead) {
   this.title = title;
@@ -57,8 +44,16 @@ function displayLibrary() {
 
     title.textContent = currentBook.title;
     author.textContent = currentBook.author;
-    pages.textContent = currentBook.pages;
-    ifRead.textContent = currentBook.ifRead ? "Read" : "Not read";
+    pages.textContent = currentBook.pages + " pages";
+
+    if (currentBook.ifRead) {
+      ifRead.textContent = "Read";
+      ifRead.classList.add("greenButton");
+    } else {
+      ifRead.textContent = "Not read";
+      ifRead.classList.add("redButton");
+    }
+
     removeButton.textContent = "Remove";
     removeButton.addEventListener("click", () => {
       myLibrary.splice(i, 1);
@@ -73,10 +68,17 @@ function displayLibrary() {
     card.append(title, author, pages, ifRead, removeButton);
     container.appendChild(card);
   }
+
+  if (container.hasChildNodes()) {
+    quote.classList.add("hide");
+  } else {
+    quote.classList.remove("hide");
+  }
 }
 
 mainButton.addEventListener("click", () => {
   dialog.showModal();
+  quote.classList.add("hide");
 });
 
 form.addEventListener("submit", (e) => {
@@ -94,6 +96,12 @@ form.addEventListener("submit", (e) => {
 
 formClose.addEventListener("click", () => {
   dialog.close();
+
+  if (container.hasChildNodes()) {
+    quote.classList.add("hide");
+  } else {
+    quote.classList.remove("hide");
+  }
 });
 
 displayLibrary();
