@@ -11,16 +11,17 @@ if (window.history.replaceState) {
 
 const myLibrary = [];
 
-function Book(title, author, pages, ifRead) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.ifRead = ifRead;
+class Book {
+  constructor(title, author, pages, ifRead) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.ifRead = ifRead;
+  }
+  changeRead() {
+    this.ifRead = !this.ifRead;
+  }
 }
-
-Book.prototype.changeRead = function () {
-  this.ifRead = !this.ifRead;
-};
 
 function addBook(title, author, pages, ifRead) {
   let nextBook = new Book(title, author, pages, ifRead);
